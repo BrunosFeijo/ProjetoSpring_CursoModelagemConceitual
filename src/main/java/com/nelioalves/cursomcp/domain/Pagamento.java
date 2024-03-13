@@ -3,6 +3,7 @@ package com.nelioalves.cursomcp.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.nelioalves.cursomcp.domain.enuns.EstadoPagamento;
 
 import jakarta.persistence.Entity;
@@ -22,6 +23,7 @@ public abstract class Pagamento implements Serializable{
 	private Integer id;
 	private int estado;
 	
+	@JsonBackReference
 	@OneToOne
 	@JoinColumn(name="pedido_id")
 	@MapsId
